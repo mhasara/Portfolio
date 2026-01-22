@@ -9,23 +9,40 @@
 
   button {
     float: right;
-    background-color: white;
-    color: #050f0b;
+    background: linear-gradient(135deg, #6b2dd4 0%, #5000ca 100%);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(80, 0, 202, 0.3);
   }
 
   button:hover {
-    background-color: #5000ca;
-    color: white;
+    background: linear-gradient(135deg, #7c3ee5 0%, #6200ea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(80, 0, 202, 0.5);
+  }
+
+  button:active {
+    transform: translateY(0);
   }
 
   fieldset {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(107, 45, 212, 0.3);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
   }
 }
 
 label {
   font-size: 1.2rem;
   font-family: 'DomaineDispNar-Medium', sans-serif;
+  color: #e0e0e0;
+  font-weight: 500;
 }
 
 .form-flex {
@@ -36,6 +53,36 @@ label {
 
 .form-flex .MuiFormControl-root {
   width: 100%;
+  
+  .MuiOutlinedInput-root {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    
+    fieldset {
+      border-color: rgba(107, 45, 212, 0.3);
+    }
+    
+    &:hover fieldset {
+      border-color: rgba(107, 45, 212, 0.5);
+    }
+    
+    &.Mui-focused fieldset {
+      border-color: #6b2dd4;
+      border-width: 2px;
+    }
+  }
+  
+  .MuiInputBase-input {
+    color: #ffffff;
+  }
+  
+  .MuiFormLabel-root {
+    color: rgba(255, 255, 255, 0.7);
+    
+    &.Mui-focused {
+      color: #7c3ee5;
+    }
+  }
 }
 
 form {
@@ -47,7 +94,7 @@ form {
   margin-bottom: 15px !important;
 }
 
-/* 🔗 New: Social Contact Buttons (No color changes) */
+/* 🔗 Modern Social Contact Buttons */
 .contact-links {
   display: flex;
   gap: 12px;
@@ -56,10 +103,34 @@ form {
 
   button {
     text-transform: none;
-    border-width: 1.5px;
+    border: 1.5px solid rgba(107, 45, 212, 0.5);
+    background: rgba(255, 255, 255, 0.03);
+    color: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+    
+    &:hover {
+      background: rgba(107, 45, 212, 0.15);
+      border-color: #6b2dd4;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(107, 45, 212, 0.3);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
   }
 
   svg {
     font-size: 1.2em;
+    transition: transform 0.3s ease;
+  }
+  
+  button:hover svg {
+    transform: scale(1.1);
   }
 }

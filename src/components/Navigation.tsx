@@ -15,13 +15,18 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-
+import DownloadIcon from '@mui/icons-material/Download';
+import '../assets/styles/navigation.scss';
 const drawerWidth = 240;
-const navItems = [['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']];
+const navItems = [
+  ['Expertise', 'expertise'],
+  ['History', 'history'],
+  ['Projects', 'projects'],
+  ['Contact', 'contact']
+];
 
-function Navigation({parentToChild, modeChange}: any) {
-
-  const {mode} = parentToChild;
+function Navigation({ parentToChild, modeChange }: any) {
+  const { mode } = parentToChild;
 
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -40,26 +45,17 @@ function Navigation({parentToChild, modeChange}: any) {
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = (section: string) => {
-    console.log(section)
-    const expertiseElement = document.getElementById(section);
-    if (expertiseElement) {
-      expertiseElement.scrollIntoView({ behavior: 'smooth' });
-      console.log('Scrolling to:', expertiseElement);  // Debugging: Ensure the element is found
-    } else {
-      console.error('Element with id "expertise" not found');  // Debugging: Log error if element is not found
-    }
+    const el = document.getElementById(section);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   const drawer = (
     <Box className="navigation-bar-responsive" onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <p className="mobile-menu-top"><ListIcon/>Menu</p>
+      <p className="mobile-menu-top"><ListIcon /> Menu</p>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -69,6 +65,19 @@ function Navigation({parentToChild, modeChange}: any) {
             </ListItemButton>
           </ListItem>
         ))}
+
+        {/* 📄 Download CV (Mobile) */}
+        <ListItem disablePadding>
+          <ListItemButton
+            component="a"
+            href="/cv/Hasini_Asara_CV.pdf"
+            download
+            sx={{ textAlign: 'center' }}
+          >
+            <DownloadIcon sx={{ mr: 1 }} />
+            <ListItemText primary="Download CV" />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -77,7 +86,9 @@ function Navigation({parentToChild, modeChange}: any) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" id="navigation" className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}>
-        <Toolbar className='navigation-bar'>
+        <Toolbar className="navigation-bar">
+
+          {/* 🍔 Mobile Menu */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -87,28 +98,43 @@ function Navigation({parentToChild, modeChange}: any) {
           >
             <MenuIcon />
           </IconButton>
-          {mode === 'dark' ? (
-            <LightModeIcon onClick={() => modeChange()}/>
-          ) : (
-            <DarkModeIcon onClick={() => modeChange()}/>
-          )}
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+
+          {/* 🌗 Dark / Light Mode */}
+          {mode === 'dark'
+            ? <LightModeIcon className="mode-icon" onClick={() => modeChange()} />
+            : <DarkModeIcon className="mode-icon" onClick={() => modeChange()} />
+          }
+
+          {/* 🧭 Desktop Menu */}
+          <Box className="nav-links" sx={{ display: { xs: 'none', sm: 'flex' } }}>
             {navItems.map((item) => (
-              <Button key={item[0]} onClick={() => scrollToSection(item[1])} sx={{ color: '#fff' }}>
+              <Button key={item[0]} onClick={() => scrollToSection(item[1])}>
                 {item[0]}
               </Button>
             ))}
+
+            {/* 📄 Download CV (Desktop) */}
+            <Button
+              className="cv-btn"
+              startIcon={<DownloadIcon />}
+              component="a"
+              href="/cv/Hasini_Asara_CV.pdf"
+              download
+            >
+              Download CV
+            </Button>
           </Box>
+
         </Toolbar>
       </AppBar>
+
+      {/* 📱 Drawer */}
       <nav>
         <Drawer
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
+          ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
