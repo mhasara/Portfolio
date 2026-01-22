@@ -46,3 +46,20 @@ form {
   width: 100% !important;
   margin-bottom: 15px !important;
 }
+
+/* 🔗 New: Social Contact Buttons (No color changes) */
+.contact-links {
+  display: flex;
+  gap: 12px;
+  margin: 15px 0 25px;
+  flex-wrap: wrap;
+
+  button {
+    text-transform: none;
+    border-width: 1.5px;
+  }
+
+  svg {
+    font-size: 1.2em;
+  }
+}
