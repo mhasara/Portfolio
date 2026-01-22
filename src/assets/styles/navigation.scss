@@ -1,138 +1,217 @@
-/* 🌗 Mode Icon */
+/* =========================
+   NAVBAR GLASS BASE
+========================= */
+
+#navigation {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 30, 0.75),
+    rgba(10, 10, 20, 0.85)
+  ) !important;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.35s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+#navigation.scrolled {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 20, 0.9),
+    rgba(5, 5, 15, 0.95)
+  ) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.navigation-bar {
+  display: flex;
+  align-items: center;
+  padding: 0 24px !important;
+  min-height: 78px !important;
+}
+
+/* =========================
+   MODE ICON
+========================= */
+
 .mode-icon {
   cursor: pointer;
-  margin-right: 15px;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.4));
+  margin-left: 10px;
+  margin-right: 22px;
+  transition: all 0.35s ease;
+  filter: drop-shadow(0 0 0 transparent);
 }
 
 .mode-icon:hover {
-  transform: rotate(180deg) scale(1.1);
-  filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.8));
+  transform: rotate(25deg) scale(1.2);
+  color: #c77dff;
+  filter: drop-shadow(0 0 10px rgba(199, 125, 255, 0.7));
 }
 
-/* 🧭 Desktop Nav Links */
+/* =========================
+   NAV LINKS (DESKTOP)
+========================= */
+
 .nav-links {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
 }
 
-.nav-links a {
+.nav-links button {
+  color: #bfacde !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
   position: relative;
-  color: #e0e0e0;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  padding: 8px 0;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #a855f7, #c084fc);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #c084fc;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* 📄 Download CV Button */
-.cv-btn {
-  border: 2px solid transparent !important;
-  background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-              linear-gradient(135deg, #a855f7, #c084fc) border-box !important;
-  color: #e0e0e0 !important;
-  text-transform: none !important;
-  border-radius: 25px !important;
-  padding: 10px 24px !important;
-  font-weight: 600 !important;
-  position: relative;
+  padding: 8px 14px !important;
+  border-radius: 10px !important;
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+  transition: all 0.35s ease !important;
 }
 
-.cv-btn::before {
-  content: '';
+/* Neon glow hover background */
+.nav-links button::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.3), transparent);
-  transition: left 0.5s ease;
+  inset: 0;
+  background: linear-gradient(120deg, #7b2cff, #c77dff);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
 }
 
-.cv-btn:hover::before {
-  left: 100%;
+.nav-links button:hover::before {
+  opacity: 0.18;
+}
+
+/* Neon underline */
+.nav-links button::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  bottom: 3px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #7b2cff, #c77dff);
+  transition: width 0.35s ease;
+  border-radius: 999px;
+}
+
+.nav-links button:hover::after {
+  width: 80%;
+}
+
+/* Lift + glow */
+.nav-links button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(123, 44, 255, 0.25);
+}
+
+/* =========================
+   DOWNLOAD CV BUTTON
+========================= */
+
+.cv-btn {
+  background: linear-gradient(135deg, #7b2cff, #c77dff) !important;
+  color: white !important;
+  text-transform: uppercase !important;
+  border-radius: 999px !important;
+  padding: 8px 22px !important;
+  margin-left: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  border: none !important;
+  box-shadow: 0 0 15px rgba(123, 44, 255, 0.45);
+  transition: all 0.35s ease !important;
+  animation: pulseGlow 3s infinite ease-in-out;
 }
 
 .cv-btn:hover {
-  background: linear-gradient(135deg, #a855f7, #c084fc) !important;
-  color: #0a0a0a !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(199, 125, 255, 0.9);
+  background: linear-gradient(135deg, #c77dff, #7b2cff) !important;
 }
 
-/* 📱 Mobile Drawer */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(123, 44, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(199, 125, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(123, 44, 255, 0.4);
+  }
+}
+
+/* =========================
+   MOBILE DRAWER
+========================= */
+
+.navigation-bar-responsive {
+  background: radial-gradient(circle at top, #141426, #05050f);
+  height: 100%;
+  color: white;
+}
+
 .mobile-menu-top {
-  font-size: 1.2rem;
-  padding: 16px;
+  font-size: 1.15rem;
+  padding: 18px;
   font-weight: 700;
-  background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-  border-bottom: 2px solid rgba(168, 85, 247, 0.3);
-  color: #c084fc;
-  letter-spacing: 0.5px;
-}
-
-.mobile-nav-links {
+  letter-spacing: 0.08em;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 24px;
-  padding: 0 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.mobile-nav-links a {
-  color: #e0e0e0;
-  text-decoration: none;
-  padding: 14px 20px;
+.navigation-bar-responsive .MuiListItemButton-root {
+  transition: all 0.35s ease;
   border-radius: 12px;
+  margin: 6px 12px;
+}
+
+.navigation-bar-responsive .MuiListItemButton-root:hover {
+  background: linear-gradient(
+    120deg,
+    rgba(123, 44, 255, 0.25),
+    rgba(199, 125, 255, 0.25)
+  );
+  transform: translateX(6px);
+}
+
+.navigation-bar-responsive .MuiListItemText-root {
+  text-align: center;
+  font-size: 1rem;
   font-weight: 500;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(168, 85, 247, 0.1);
+  letter-spacing: 0.05em;
 }
 
-.mobile-nav-links a:hover,
-.mobile-nav-links a:active {
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(192, 132, 252, 0.1));
-  border-color: rgba(168, 85, 247, 0.4);
-  transform: translateX(8px);
-  color: #c084fc;
-  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
+/* Mobile CV link */
+.navigation-bar-responsive a {
+  text-decoration: none;
+  color: white;
 }
 
-/* Mobile Drawer Background */
-.MuiDrawer-paper {
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 100%) !important;
-  backdrop-filter: blur(10px);
-}
+/* =========================
+   RESPONSIVE TWEAKS
+========================= */
 
-/* Glassmorphism effect for mobile menu items */
-@supports (backdrop-filter: blur(10px)) {
-  .mobile-nav-links a {
-    backdrop-filter: blur(10px);
+@media (max-width: 600px) {
+  .navigation-bar {
+    padding: 0 14px !important;
+  }
+
+  .cv-btn {
+    padding: 7px 18px !important;
+    font-size: 0.85rem !important;
   }
 }
