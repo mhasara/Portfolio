@@ -19,7 +19,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import '../assets/styles/navigation.scss';
 const drawerWidth = 240;
 const navItems = [
-  ['Archievements', 'archievements'],
+  ['Achievements', 'achievements'],
   ['History', 'history'],
   ['Projects', 'projects'],
   ['Contact', 'contact']
