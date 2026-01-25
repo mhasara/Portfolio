@@ -2,11 +2,11 @@ import React, {useState, useEffect} from "react";
 import {
   Main,
   Timeline,
-  Expertise,
   Project,
   Contact,
   Navigation,
   Footer,
+  Archievements,
 } from "./components";
 import FadeIn from './components/FadeIn';
 import './index.scss';
@@ -31,7 +31,7 @@ function App() {
         <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
         <FadeIn transitionDuration={700}>
             <Main/>
-            <Expertise/>
+            <Archievements/>
             <Timeline/>
             <Project/>
             <Contact/>
