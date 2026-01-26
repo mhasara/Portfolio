@@ -20,7 +20,7 @@ import '../assets/styles/navigation.scss';
 const drawerWidth = 240;
 const navItems = [
   ['Achievements', 'achievements'],
-  ['History', 'history'],
+  ['About', 'about'],
   ['Projects', 'projects'],
   ['Contact', 'contact']
 ];

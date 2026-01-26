@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from "react";
 import {
   Main,
-  Timeline,
+  
   Project,
   Contact,
   Navigation,
   Footer,
   Achievements,
+  About,
 } from "./components";
 import FadeIn from './components/FadeIn';
 import './index.scss';
@@ -32,7 +33,7 @@ function App() {
         <FadeIn transitionDuration={700}>
             <Main/>
             <Achievements/>
-            <Timeline/>
+            <About/>
             <Project/>
             <Contact/>
         </FadeIn>
