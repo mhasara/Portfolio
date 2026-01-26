@@ -1,80 +1,150 @@
 import React from "react";
 import "../assets/styles/about.scss";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import DownloadIcon from "@mui/icons-material/Download";
 
-const techSkills = [
-  "HTML", "CSS", "JavaScript", "React", "Python", "Java",
-  "C", "C#", "ASP.NET", "SQL", "Git", "UI/UX Design"
-];
-
-const languageSkills = [
-  { name: "Sinhala", level: 100 },
-  { name: "English", level: 85 },
-  { name: "Tamil", level: 45 },
+const skillCircles = [
+  { name: "HTML", value: 85 },
+  { name: "CSS", value: 80 },
+  { name: "JavaScript", value: 78 },
+  { name: "React", value: 75 },
+  { name: "Python", value: 70 },
+  { name: "Java", value: 72 },
+  { name: "C#", value: 68 },
+  { name: "ASP.NET", value: 65 },
 ];
 
 const About = () => {
   return (
-    <div className="about-container" id="about">
-      <h1>About Me</h1>
+    <div className="about-section" id="about">
+      <h1 className="section-title">
+        ABOUT <span>ME</span>
+      </h1>
 
-      {/* 👤 Intro */}
-      <p className="about-intro">
-        Hi! I’m <strong>Hasini Asara</strong>, an undergraduate Software Engineering student
-        at <strong>NSBM Green University</strong>. I love building creative,
-        user-friendly web apps and exploring modern technologies like React and ASP.NET.
-      </p>
+      {/* ===== TOP GRID ===== */}
+      <div className="about-top">
 
-      {/* 🏫 Positions */}
-      <h2>University Involvement</h2>
-      <ul className="about-list">
-        <li>🎯 Member – University Coding Club</li>
-        <li>📊 Business Analyst – Digital Attendance System Project</li>
-        <li>🚑 Research Lead – Ambulance Management System (Sri Lanka)</li>
-      </ul>
+        {/* Personal Info */}
+        <div className="about-card">
+          <h3>Personal Infos</h3>
+          <ul>
+            <li><strong>Name:</strong> Hasini Asara</li>
+            <li><strong>University:</strong> NSBM Green University</li>
+            <li><strong>Degree:</strong> BSc in Software Engineering</li>
+            <li><strong>Role:</strong> Undergraduate Developer</li>
+            <li><strong>Email:</strong> mhasara@gmail.com</li>
+            <li><strong>Location:</strong> Sri Lanka</li>
+            <li><strong>Languages:</strong> Sinhala, English</li>
+          </ul>
 
-      {/* 🤝 Volunteer */}
-      <h2>Volunteer Experience</h2>
-      <ul className="about-list">
-        <li>🤖 Tech Volunteer – University Hackathons</li>
-        <li>📚 Peer Tutor – Programming Basics</li>
-        <li>🌱 Event Organizer – Student Tech Meetups</li>
-      </ul>
+          <a
+            className="cv-btn"
+            href="/cv/Hasini_Asara_CV.pdf"
+            download
+          >
+            <DownloadIcon /> Download CV
+          </a>
+        </div>
 
-      {/* 🔗 LinkedIn */}
-      <a
-        className="linkedin-btn"
-        href="https://www.linkedin.com/in/hasini-asara-60a5362a6"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <LinkedInIcon /> View Full Profile on LinkedIn
-      </a>
+        {/* Stats */}
+        <div className="stats-grid">
+          <div className="stat-box">
+            <h2>3+</h2>
+            <p>YEARS LEARNING</p>
+          </div>
+          <div className="stat-box">
+            <h2>10+</h2>
+            <p>PROJECTS</p>
+          </div>
+          <div className="stat-box">
+            <h2>5+</h2>
+            <p>CLUB ROLES</p>
+          </div>
+          <div className="stat-box">
+            <h2>6+</h2>
+            <p>TECH STACKS</p>
+          </div>
+        </div>
 
-      {/* 💻 Tech Skills */}
-      <h2>Technical Skills</h2>
+      </div>
+
+      {/* ===== SKILLS ===== */}
+      <h2 className="sub-title">My Skills</h2>
+
       <div className="skills-grid">
-        {techSkills.map((skill, index) => (
-          <span key={index} className="skill-chip">
-            {skill}
-          </span>
+        {skillCircles.map((skill, index) => (
+          <div key={index} className="skill-circle">
+            <svg viewBox="0 0 36 36">
+              <path
+                className="bg"
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <path
+                className="progress"
+                strokeDasharray={`${skill.value}, 100`}
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <text x="18" y="20.35" className="percentage">
+                {skill.value}%
+              </text>
+            </svg>
+            <p>{skill.name}</p>
+          </div>
         ))}
       </div>
 
-      {/* 🌍 Language Skills */}
-      <h2>Language Skills</h2>
-      <div className="language-section">
-        {languageSkills.map((lang, index) => (
-          <div key={index} className="language-item">
-            <span className="language-name">{lang.name}</span>
-            <div className="language-bar">
-              <div
-                className="language-fill"
-                style={{ width: `${lang.level}%` }}
-              ></div>
-            </div>
+      {/* ===== EXPERIENCE & EDUCATION ===== */}
+      <h2 className="sub-title">Experience & Education</h2>
+
+      <div className="timeline-grid">
+
+        <div className="timeline-column">
+          <h3>Experience</h3>
+
+          <div className="timeline-item">
+            <span>2024 - Present</span>
+            <h4>Research Lead – Ambulance System</h4>
+            <p>Designing and developing a smart ambulance management system for Sri Lanka.</p>
           </div>
-        ))}
+
+          <div className="timeline-item">
+            <span>2023 - 2024</span>
+            <h4>Business Analyst – Attendance System</h4>
+            <p>Handled requirement analysis and system design for a university project.</p>
+          </div>
+
+          <div className="timeline-item">
+            <span>2023</span>
+            <h4>CTF Challenge Organizer</h4>
+            <p>Developed web and crypto challenges for university cybersecurity events.</p>
+          </div>
+        </div>
+
+        <div className="timeline-column">
+          <h3>Education</h3>
+
+          <div className="timeline-item">
+            <span>2023 - Present</span>
+            <h4>BSc Software Engineering – NSBM</h4>
+            <p>Focused on full-stack development, UI/UX, and enterprise applications.</p>
+          </div>
+
+          <div className="timeline-item">
+            <span>2022</span>
+            <h4>HND – ICBT Campus</h4>
+            <p>Completed Higher National Diploma in Computing.</p>
+          </div>
+
+          <div className="timeline-item">
+            <span>2020</span>
+            <h4>Advanced Level – Thelijjawila Central College</h4>
+            <p>Completed school education with Maths stream.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   );
