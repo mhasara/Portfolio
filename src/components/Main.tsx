@@ -3,7 +3,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SplitText from "../assets/animation/splitt";
 import '../assets/styles/Main.scss';
-import Particles from "../assets/animation/practicels";
 
 function Main() {
 
@@ -12,23 +11,7 @@ function Main() {
   };
 
   return (
-    <div className="container main-bg-wrapper">
-      
-      {/* 🌌 Particles Background */}
-      <Particles
-        particleCount={180}
-        particleSpread={12}
-        speed={0.15}
-        alphaParticles={true}
-        particleBaseSize={90}
-        sizeRandomness={1}
-        cameraDistance={18}
-        moveParticlesOnHover={true}
-        particleHoverFactor={0.5}
-        className="particles-bg"
-      />
-
-      {/* 👤 Foreground Content */}
+    <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
           <img
@@ -51,6 +34,7 @@ function Main() {
           <h1>
             <SplitText
               text="Hasini Asara"
+              className=""
               delay={50}
               duration={10}
               ease="power3.out"
@@ -68,6 +52,7 @@ function Main() {
           <p>
             <SplitText
               text="Aspire Software Engineer"
+              className=""
               delay={30}
               duration={10}
               ease="power3.out"
@@ -91,7 +76,8 @@ function Main() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }
+
+export default Main;
