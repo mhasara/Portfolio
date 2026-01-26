@@ -153,3 +153,19 @@
         }
     }
 }
+
+.main-bg-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.particles-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-section {
+  position: relative;
+  z-index: 1; // keeps content above particles
+}
