@@ -16,10 +16,11 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import DownloadIcon from '@mui/icons-material/Download';
-import '../assets/styles/navigation.scss';
+import '../assets/styles/Navigation.scss';
 const drawerWidth = 240;
 const navItems = [
   ['Achievements', 'achievements'],
+  ['Career', 'history'],
   ['About', 'about'],
   ['Projects', 'projects'],
   ['Contact', 'contact']

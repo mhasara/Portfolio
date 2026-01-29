@@ -4,4 +4,5 @@ export { default as Footer } from "./Footer";
 export { default as Main } from "./Main";
 export { default as Navigation } from "./Navigation";
 export { default as Project } from "./Project";
-export { default as About } from "./about";
+export { default as About } from "./About";
+export { default as Timeline } from "./Timeline";

@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/styles/about.scss";
+import "../assets/styles/About.scss";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const techSkills = [

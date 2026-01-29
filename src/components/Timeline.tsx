@@ -16,50 +16,38 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
+            date="2024 - present"
+            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            icon={<FontAwesomeIcon icon={faBriefcase} />}
+          >
+            <h3 className="vertical-timeline-element-title">Research Lead</h3>
+            <h4 className="vertical-timeline-element-subtitle">Ambulance Management System (Sri Lanka)</h4>
+            <p>
+              Leading research initiatives for a nationwide ambulance management system, focusing on optimization and real-time tracking.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            date="2023 - 2024"
+            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            icon={<FontAwesomeIcon icon={faBriefcase} />}
+          >
+            <h3 className="vertical-timeline-element-title">Business Analyst</h3>
+            <h4 className="vertical-timeline-element-subtitle">Digital Attendance System Project</h4>
+            <p>
+              Analyzed requirements and streamlined processes for a digital attendance system at NSBM Green University.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
             date="2022 - present"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Technology Consultant</h3>
-            <h4 className="vertical-timeline-element-subtitle">Dallas, TX</h4>
+            <h3 className="vertical-timeline-element-title">University Coding Club Member</h3>
+            <h4 className="vertical-timeline-element-subtitle">NSBM Green University</h4>
             <p>
-              Full-stack Web Development, GenAI/LLM, Project Management, Business Development
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="2020 - 2022"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
-          >
-            <h3 className="vertical-timeline-element-title">Full Stack Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
-            <p>
-              Frontend Development, Backend Development, User Experience, Team Leading
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="2021 - 2021"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
-          >
-            <h3 className="vertical-timeline-element-title">Staff Engineer Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
-            <p>
-              Full-stack Development, API Development, User Experience
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="2020 - 2020"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
-          >
-            <h3 className="vertical-timeline-element-title">Data Analyst Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Tokyo, Japan</h4>
-            <p>
-              Automation, Data Governance, Statistical Analysis
+              Actively participating in coding competitions, hackathons, and technical workshops.
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
