@@ -35,7 +35,7 @@ function Main() {
                 style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", filter: "brightness(1.2)" }}
               />
             }
-            gridSize={12}
+            gridSize={16}
             pixelColor="#c77dff"
             animationStepDuration={0.4}
             className="avatar-pixel-transition"
