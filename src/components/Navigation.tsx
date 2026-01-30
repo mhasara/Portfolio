@@ -55,7 +55,7 @@ function Navigation({ parentToChild, modeChange }: any) {
   };
 
   const drawer = (
-    <Box className="navigation-bar-responsive" onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box className={`navigation-bar-responsive ${mode === 'light' ? 'light-mode' : ''}`} onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <p className="mobile-menu-top"><ListIcon /> Menu</p>
       <Divider />
       <List>
@@ -130,7 +130,6 @@ function Navigation({ parentToChild, modeChange }: any) {
       </AppBar>
 
       {/* 📱 Drawer */}
-      <nav>
         <Drawer
           variant="temporary"
           open={mobileOpen}
@@ -138,12 +137,16 @@ function Navigation({ parentToChild, modeChange }: any) {
           ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { 
+                boxSizing: 'border-box', 
+                width: drawerWidth,
+                backgroundColor: mode === 'dark' ? '#0d1116' : '#f0f2f5',
+                backgroundImage: 'none'
+            },
           }}
         >
           {drawer}
         </Drawer>
-      </nav>
     </Box>
   );
 }
