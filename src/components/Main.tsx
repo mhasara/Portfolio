@@ -3,6 +3,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SplitText from "../assets/animation/SplitText";
 import '../assets/styles/Main.scss';
+import myAvatar from '../assets/images/my.jpg';
 
 function Main() {
 
@@ -18,10 +19,12 @@ function Main() {
    <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          <img
-            src="https://my-aws-assets.s3.us-west-2.amazonaws.com/portfolio-img/avatar_circle.jpeg"
-            alt="Avatar"
-          />
+         <div className="image-wrapper">
+  <img
+    src={myAvatar} // Use the imported variable here
+    alt="Avatar"
+  />
+</div>
         </div>
 
         <div className="content">
