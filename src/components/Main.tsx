@@ -2,6 +2,7 @@ import React from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SplitText from "../assets/animation/SplitText";
+import PixelTransition from "../assets/animation/PixelTransition";
 import '../assets/styles/Main.scss';
 import myAvatar from '../assets/images/my.jpg';
 
@@ -19,12 +20,26 @@ function Main() {
    <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-         <div className="image-wrapper">
-  <img
-    src={myAvatar} // Use the imported variable here
-    alt="Avatar"
-  />
-</div>
+          <PixelTransition
+            firstContent={
+              <img
+                src={myAvatar}
+                alt="Avatar Default"
+                style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }}
+              />
+            }
+            secondContent={
+              <img
+                src={myAvatar}
+                alt="Avatar Active"
+                style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", filter: "brightness(1.2)" }}
+              />
+            }
+            gridSize={12}
+            pixelColor="#c77dff"
+            animationStepDuration={0.4}
+            className="avatar-pixel-transition"
+          />
         </div>
 
         <div className="content">
