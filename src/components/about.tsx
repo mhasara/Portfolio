@@ -134,8 +134,8 @@ const About = () => {
         >
           <div className="info-card skills-card">
             <div className="card-header">
-              <span className="card-icon">💻</span>
-              <h2>Technical Skills</h2>
+          
+              <h2>Tech Preference</h2>
             </div>
             <div className="card-body logo-loop-container">
               <LogoLoop
