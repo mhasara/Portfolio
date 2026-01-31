@@ -40,8 +40,8 @@ function Main() {
               />
             }
             gridSize={16}
-            pixelColor="#c77dff"
-            animationStepDuration={0.4}
+            pixelColor="#7900d548"
+            animationStepDuration={0.8}
             className="avatar-pixel-transition"
           />
         </div>
