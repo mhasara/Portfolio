@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import '../assets/styles/TiltedCard.css';
 
 interface TiltedCardProps {
-  title: string;
+  title?: string;
   image: string;
   alt: string;
 }
