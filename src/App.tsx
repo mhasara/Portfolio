@@ -10,6 +10,7 @@ import {
   Timeline,
 } from "./components";
 import FadeIn from './components/FadeIn';
+import { BrowserRouter } from 'react-router-dom';
 import LightPillar from './assets/animation/LightPillar';
 import './index.scss';
 
@@ -29,26 +30,29 @@ function App() {
       }, []);
 
     return (
-    <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
-        <LightPillar 
-          className="background-animation"
-          mixBlendMode={mode === 'dark' ? 'screen' : 'multiply'}
-          intensity={mode === 'dark' ? 1.2 : 0.6}
-          topColor={mode === 'dark' ? '#5227FF' : '#E0E0FF'}
-          bottomColor={mode === 'dark' ? '#FF9FFC' : '#FFEBEB'}
-        />
-       
-        <FadeIn transitionDuration={700}>
-            <Main/>
-             <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
-            <Achievements/>
-            <Timeline/>
-            <About/>
-            <Project/>
-            <Contact/>
-        </FadeIn>
-        <Footer />
-    </div>
+    <BrowserRouter>
+      <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
+          <LightPillar 
+            className="background-animation"
+            mixBlendMode={mode === 'dark' ? 'screen' : 'multiply'}
+            intensity={mode === 'dark' ? 1.2 : 0.6}
+            topColor={mode === 'dark' ? '#5227FF' : '#E0E0FF'}
+            bottomColor={mode === 'dark' ? '#FF9FFC' : '#FFEBEB'}
+          />
+         
+          <FadeIn transitionDuration={700}>
+              <Main/>
+               <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
+               <About/>
+               <Achievements/>
+              <Timeline/>
+             
+              <Project/>
+              <Contact/>
+          </FadeIn>
+          <Footer />
+      </div>
+    </BrowserRouter>
     );
 }
 

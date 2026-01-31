@@ -24,6 +24,7 @@
     "ogl": "^1.0.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^7.13.0",
     "react-scripts": "5.0.1",
     "react-vertical-timeline-component": "^3.6.0",
     "sass": "^1.77.4",
@@ -58,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "@types/react-vertical-timeline-component": "^3.3.6",
     "@types/three": "^0.182.0"
   },
