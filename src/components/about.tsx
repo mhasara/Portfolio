@@ -2,29 +2,31 @@ import React from "react";
 import "../assets/styles/About.scss";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import LanguageIcon from "@mui/icons-material/Language";
 import AnimatedContent from '../assets/animation/animate';
-import LogoLoop from '../assets/animation/LogoLoop';
-import { SiReact, SiJavascript, SiPython, SiJava, SiCsharp, SiHtml5, SiCss3, SiMysql, SiGit } from 'react-icons/si';
+import LogoLoop from '../assets/animation/loop';
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiPython, SiMysql, SiGit, SiCplusplus, SiDotnet } from 'react-icons/si';
 
+// @ts-ignore
 const techLogos = [
+  // @ts-ignore
   { node: <SiHtml5 />, title: "HTML", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+  // @ts-ignore
   { node: <SiCss3 />, title: "CSS", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  // @ts-ignore
   { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  // @ts-ignore
   { node: <SiReact />, title: "React", href: "https://react.dev" },
+  // @ts-ignore
   { node: <SiPython />, title: "Python", href: "https://www.python.org" },
-  { node: <SiJava />, title: "Java", href: "https://www.java.com" },
-  { node: <SiCsharp />, title: "C#", href: "https://docs.microsoft.com/en-us/dotnet/csharp/" },
+  // @ts-ignore
+  { node: <SiCplusplus />, title: "C++", href: "https://cplusplus.com" },
+  // @ts-ignore
+  { node: <SiDotnet />, title: "ASP.NET", href: "https://dotnet.microsoft.com/apps/aspnet" },
+  // @ts-ignore
   { node: <SiMysql />, title: "SQL", href: "https://www.mysql.com" },
+  // @ts-ignore
   { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
 ];
-
-const languageSkills = [
-  { name: "Sinhala", level: 100 },
-  { name: "English", level: 85 },
-  { name: "Tamil", level: 45 },
-];
-
 const About = () => {
   return (
     <div className="about-container" id="about">
@@ -152,45 +154,6 @@ const About = () => {
           </div>
         </AnimatedContent>
 
-        {/* Language Skills */}
-        <AnimatedContent
-          distance={100}
-          direction="vertical"
-          reverse={false}
-          duration={0.8}
-          ease="power3.out"
-          initialOpacity={0}
-          animateOpacity
-          scale={1}
-          threshold={0.1}
-          delay={0.8}
-        >
-          <div className="info-card language-card">
-            <div className="card-header">
-              <LanguageIcon className="card-icon" />
-              <h2>Language Proficiency</h2>
-            </div>
-            <div className="card-body">
-              <div className="language-section">
-                {languageSkills.map((lang, index) => (
-                  <div key={index} className="language-item">
-                    <div className="language-header">
-                      <span className="language-name">{lang.name}</span>
-                      <span className="language-percentage">{lang.level}%</span>
-                    </div>
-                    <div className="language-bar">
-                      <div
-                        className="language-fill"
-                        style={{ width: `${lang.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </AnimatedContent>
-
         {/* Social Links */}
         <AnimatedContent
           distance={100}
@@ -202,7 +165,7 @@ const About = () => {
           animateOpacity
           scale={1}
           threshold={0.1}
-          delay={1}
+          delay={0.8}
         >
           <div className="social-links">
             <a
