@@ -6,8 +6,12 @@ import PixelTransition from "../assets/animation/PixelTransition";
 import '../assets/styles/Main.scss';
 import myAvatar from '../assets/images/my.jpg';
 
+import { gsap } from 'gsap';
+import { useEffect, useRef } from 'react';
+
 function Main() {
 
+  const avatarRef = useRef<HTMLImageElement>(null);
   const handleAnimationComplete = () => {
     console.log('All letters have animated!');
   };
@@ -99,6 +103,19 @@ function Main() {
     </div>
     </div>
   );
+  useEffect(() => {
+  if (avatarRef.current) {
+    // Floating animation
+    gsap.to(avatarRef.current, {
+      y: -15,
+      duration: 2,
+      ease: 'power1.inOut',
+      repeat: -1,
+      yoyo: true
+    });
+  }
+}, []);
 }
+
 
 export default Main;
