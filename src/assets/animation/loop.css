@@ -183,3 +183,10 @@
 }
 
 
+.logo-loop-container {
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+}
+

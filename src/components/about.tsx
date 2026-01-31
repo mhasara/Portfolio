@@ -2,15 +2,21 @@ import React from "react";
 import "../assets/styles/About.scss";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import SchoolIcon from "@mui/icons-material/School";
-import CodeIcon from "@mui/icons-material/Code";
-import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 import LanguageIcon from "@mui/icons-material/Language";
 import AnimatedContent from '../assets/animation/animate';
+import LogoLoop from '../assets/animation/LogoLoop';
+import { SiReact, SiJavascript, SiPython, SiJava, SiCsharp, SiHtml5, SiCss3, SiMysql, SiGit } from 'react-icons/si';
 
-const techSkills = [
-  "HTML", "CSS", "JavaScript", "React", "Python", "Java",
-  "C", "C#", "ASP.NET", "SQL", "Git", "UI/UX Design"
+const techLogos = [
+  { node: <SiHtml5 />, title: "HTML", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+  { node: <SiCss3 />, title: "CSS", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiPython />, title: "Python", href: "https://www.python.org" },
+  { node: <SiJava />, title: "Java", href: "https://www.java.com" },
+  { node: <SiCsharp />, title: "C#", href: "https://docs.microsoft.com/en-us/dotnet/csharp/" },
+  { node: <SiMysql />, title: "SQL", href: "https://www.mysql.com" },
+  { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
 ];
 
 const languageSkills = [
@@ -111,7 +117,7 @@ const About = () => {
           </AnimatedContent>
         </div>
 
-        {/* Technical Skills */}
+        {/* Technical Skills - Logo Loop */}
         <AnimatedContent
           distance={100}
           direction="vertical"
@@ -126,17 +132,22 @@ const About = () => {
         >
           <div className="info-card skills-card">
             <div className="card-header">
-              <CodeIcon className="card-icon" />
+              <span className="card-icon">💻</span>
               <h2>Technical Skills</h2>
             </div>
-            <div className="card-body">
-              <div className="skills-grid">
-                {techSkills.map((skill, index) => (
-                  <span key={index} className="skill-chip">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+            <div className="card-body logo-loop-container">
+              <LogoLoop
+                logos={techLogos}
+                speed={100}
+                direction="left"
+                logoHeight={60}
+                gap={60}
+                hoverSpeed={0}
+                scaleOnHover
+                fadeOut
+                fadeOutColor="rgba(20, 2, 2, 0.512)"
+                ariaLabel="Technology skills"
+              />
             </div>
           </div>
         </AnimatedContent>
