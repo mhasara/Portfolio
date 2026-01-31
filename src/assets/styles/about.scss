@@ -47,7 +47,7 @@
 
 // Card Styles
 .info-card {
-  background: rgba(20, 2, 2, 0.512);
+  background: rgba(18, 2, 21, 0.84);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
@@ -120,16 +120,7 @@
     position: relative;
     display: inline-block;
     
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, #a78bfa, #ec4899);
-      opacity: 0.5;
-    }
+
   }
 
   @media (max-width: 768px) {
@@ -154,7 +145,7 @@
   h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #fff;
+    color: #c082da;
     margin: 0;
   }
 
@@ -187,6 +178,25 @@
 
 // Education
 .education-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(167, 139, 250, 0.05);
+  border-radius: 10px;
+  border-left: 3px solid #a78bfa;
+
+  h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+}
+// Education
+.volunteer-item {
   margin-bottom: 20px;
   padding: 15px;
   background: rgba(167, 139, 250, 0.05);

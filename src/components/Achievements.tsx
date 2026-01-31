@@ -7,7 +7,7 @@ import '../assets/styles/Achievements.scss';
 // 👇 import images
 import duothanImg from "../assets/images/mock01.png";
 import gdxImg from "../assets/images/mock02.png";
-import greenxtremeImg from "../assets/images/mock03.png";
+import greenxtremeImg from "../assets/images/g.jpeg";
 
 const achievements = [
   {

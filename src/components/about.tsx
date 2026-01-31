@@ -72,7 +72,7 @@ const About = () => {
           >
             <div className="info-card">
               <div className="card-header">
-                <span className="card-icon">🎓</span>
+          
                 <h2>Education</h2>
               </div>
               <div className="education-container">
@@ -81,8 +81,12 @@ const About = () => {
                   <p>NSBM Green University</p>
                 </div>
                 <div className="education-item">
+                  <h3>Advanced English Diploma </h3>
+                  <p>ICBT Southern Campus</p>
+                </div>
+                <div className="education-item">
                   <h3>Advanced Level</h3>
-                  <p>Your School Name</p>
+                  <p>Physical Science Stream</p>
                 </div>
               </div>
             </div>
@@ -102,17 +106,21 @@ const About = () => {
           >
             <div className="info-card">
               <div className="card-header">
-                <span className="card-icon">🤝</span>
-                <h2>Volunteer</h2>
+               
+                <h2>Experience</h2>
               </div>
               <div className="volunteer-container">
                 <div className="volunteer-item">
-                  <h3>Community Service</h3>
-                  <p>Local Organization</p>
+                  <h3>Assistant Secretary</h3>
+                  <p>STEMUP in NSBM</p>
                 </div>
                 <div className="volunteer-item">
-                  <h3>Tech Mentor</h3>
-                  <p>University Club</p>
+                  <h3>Subcommittee Lead (23 Batch )</h3>
+                  <p>Association of Software Engineering - NSBM Grenn University</p>
+                </div>
+                 <div className="volunteer-item">
+                  <h3>Member</h3>
+                  <p>STEMUP Educational Foundation</p>
                 </div>
               </div>
             </div>
@@ -134,10 +142,10 @@ const About = () => {
         >
           <div className="info-card skills-card">
             <div className="card-header">
-          
+    
               <h2>Tech Preference</h2>
             </div>
-            <div className="card-body logo-loop-container">
+            
               <LogoLoop
                 logos={techLogos}
                 speed={100}
@@ -150,7 +158,7 @@ const About = () => {
                 fadeOutColor="rgba(20, 2, 2, 0.512)"
                 ariaLabel="Technology skills"
               />
-            </div>
+          
           </div>
         </AnimatedContent>
 

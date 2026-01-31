@@ -72,7 +72,7 @@ function Navigation({ parentToChild, modeChange }: any) {
         <ListItem disablePadding>
           <ListItemButton
             component="a"
-            href="/cv/Hasini_Asara_CV.pdf"
+            href="/cv/MHASARA.pdf"
             download
             sx={{ textAlign: 'center' }}
           >
